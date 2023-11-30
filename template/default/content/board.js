@@ -2,9 +2,9 @@
 export const index = `
     <div class="common-cont">
         <div class="sub-cont-top">
-            <h4 class="sub-cont-title">Search</h4>
+            <h4 class="sub-cont-title"></h4>
             <div class="d-flex">
-                <button type="button" class="cm-btn cm-btn-middle btn-add">환자 등록</button>
+                <button type="button" class="cm-btn cm-btn-middle btn-add">등록</button>
                 <button type="button" class="cm-btn cm-btn-icon-large btn-download-excel button-excel" style="margin-left: 2px;"> 
                     <span class="icon"></span>
                     <span class="txt">엑셀다운로드</span>
@@ -13,42 +13,6 @@ export const index = `
         </div>
         <form class="form-common-search">
         <div class="search-form">
-            <div class="search-wrap">
-                <div class="d-flex">
-                    <div class="tit">환자종류</div>
-                    <div class="cont">
-                        <div class="radio-box">
-                            <div class="radio-btn-cont">
-                                <input type="radio" name="patient-type" class="radio-input" value="-1"{{#customIndexOf choiceSearchOptions.patientType -1}} checked{{/customIndexOf}}>
-                                <label class="span">전체</label>
-                            </div>
-                            {{#each CONSTANTS.PATIENT_TYPE}} 
-                            <div class="radio-btn-cont">
-                                <input type="radio" name="patient-type" class="radio-input" value="{{@key}}"{{#customIndexOf ../choiceSearchOptions.patientType @key}} checked{{/customIndexOf}}>
-                                <label class="span">{{this}}</label>
-                            </div>
-                            {{/each}}
-                        </div>
-                    </div>
-                </div>
-                <div class="d-flex">
-                    <div class="tit">환자 이송상태</div>
-                    <div class="cont">
-                        <div class="radio-box">
-                            <div class="radio-btn-cont">
-                                <input type="radio" name="transport-status" class="radio-input" value="-1"{{#customIndexOf choiceSearchOptions.transportStatus -1}} checked{{/customIndexOf}}>
-                                <label class="span">전체</label>
-                            </div>
-                            {{#each CONSTANTS.TRANSPORT_STATUS}} 
-                            <div class="radio-btn-cont">
-                                <input type="radio" name="transport-status" class="radio-input" value="{{@key}}"{{#customIndexOf ../choiceSearchOptions.transportStatus @key}} checked{{/customIndexOf}}>
-                                <label class="span">{{this}}</label>
-                            </div>
-                            {{/each}}
-                        </div>
-                    </div>
-                </div>
-            </div>
             <div class="search-wrap">
                 <div class="d-flex">
                     <div class="tit">검색기간</div>
@@ -92,148 +56,86 @@ export const index = `
             <div class="cm-table-cont">
                 <div class="cm-colgroup">
                     <div style="width:5%"></div>
-                    <div style="width:7%"></div>
-                    <div style="width:12%"></div>
-                    <div style="width:5%"></div>
                     <div style=""></div>
+                    <div style="width:7%"></div>
+                    <div style="width:7%"></div>
+                    <div style="width:7%"></div>
+                    <div style="width:7%"></div>
+                    <div style="width:7%"></div>
+                    <div style="width:7%"></div>
+                    <div style="width:7%"></div>
+                    <div style="width:15%"></div>
                     <div style="width:10%"></div>
-                    <div style="width:25%"></div>
                 </div>
                 <div class="cm-thead">
                     <div class="cm-tr">
-                        <p class="cm-th">순서</p>
-                        <p class="cm-th">환자이송상태</p>
-                        <p class="cm-th">측정코드</p>
-                        <p class="cm-th">환자성별</p>
-                        <p class="cm-th">환자발생장소</p>
-                        <p class="cm-th">환자발생시간</p>
+                        <p class="cm-th">번호</p>
+                        <p class="cm-th">이름</p>
+                        <p class="cm-th">목록권한</p>
+                        <p class="cm-th">읽기권한</p>
+                        <p class="cm-th">쓰기권한</p>
+                        <p class="cm-th">답글권한</p>
+                        <p class="cm-th">코멘트퀀한</p>
+                        <p class="cm-th">답글사용</p>
+                        <p class="cm-th">코멘트사용</p>
+                        <p class="cm-th">수정시간</p>
                         <p class="cm-th">관리</p>
                     </div>
                 </div>
                 <div class="cm-tbody" id="contents-by-data-table"></div>
             </div>
         </div>
-        <div class="pagination patient-pagination" id="pagination"></div>
+        <div class="pagination board-pagination" id="pagination"></div>
     </div>
 `;
 
 export const dataTable = `
 {{#each datas}}  
-<div class="cm-tr" data-unique-id="{{measurementCode}}">
+<div class="cm-tr" data-unique-id="{{code}}">
     <p class="cm-td td-num">{{virtualNumber}}</p>
     <p class="cm-td">
-        <span class="pc-d-none">상태</span>
-        {{parsingTransportStatus}}
+        {{name}}
     </p>
     <p class="cm-td">
-        <span class="pc-d-none">고유코드</span>
-        {{measurementCode}}
+        <span class="pc-d-none">목록권한</span>
+        {{parsingList}}
     </p>
     <p class="cm-td">
-        <span class="pc-d-none">성별</span>
-        {{genderParsing gender false}}
+        <span class="pc-d-none">읽기권한</span>
+        {{parsingView}}
     </p>
     <p class="cm-td">
-        <span class="pc-d-none">발생장소</span>
-        {{discoveryAddress}}
+        <span class="pc-d-none">쓰기권한</span>
+        {{parsingWrite}}
     </p>
     <p class="cm-td">
-        <span class="pc-d-none">이송여부</span>
-        {{symptomDateTime}}
+        <span class="pc-d-none">답글권한</span>
+        {{parsingReply}}
     </p>
     <p class="cm-td">
-<!--        <button type="button" class="cm-btn cm-btn-small btn-black button-transfer" style="width: 100px;">이송목록보기</button>-->
-<!--        <button type="button" class="cm-btn cm-btn-small btn-black button-questionnaire" style="width: 100px;">문진결과보기</button>-->
-<!--        <button type="button" class="cm-btn cm-btn-small btn-black button-chatting-history" style="width: 100px;">채팅이력보기</button>-->
-        <button type="button" class="cm-btn cm-btn-small btn-black button-update-hospital" style="width: auto; min-width: 50px;">지정 병원 변경</button>
-        <button type="button" class="cm-btn cm-btn-small btn-black button-update-transport" style="width: auto; min-width: 50px;">환자 이송 상태 변경</button>
-        {{#customIf patientType '===' ../CONSTANTS.PATIENT_TYPE.CODE.DIAGNOSIS}}
-        <button type="button" class="cm-btn cm-btn-small btn-black button-update">수정</button>
-        {{/customIf}}        
+        <span class="pc-d-none">코멘트권한</span>
+        {{parsingComment}}
+    </p>    
+    <p class="cm-td">
+        <span class="pc-d-none">답글사용</span>
+        {{parsingUseReply}}
+    </p>
+    <p class="cm-td">
+        <span class="pc-d-none">코멘트사용</span>
+        {{parsingUseComment}}
+    </p>    
+    <p class="cm-td">
+        <span class="pc-d-none">수정시간</span>
+        {{updateDateTime}}
+    </p>
+    <p class="cm-td">
+        <button type="button" class="cm-btn cm-btn-small btn-black button-update">수정</button>        
         <button type="button" class="cm-btn cm-btn-small cm-btn-n-default btn-delete button-delete">삭제</button>
     </p>
 </div>
 {{/each}}
 `;
 
-export const addBackup = `
-    <div class="common-cont organ-common-cont">
-        <div class="sub-cont-top">
-            <h4 class="sub-cont-title">{{title}}</h4>
-        </div>
-        <form id="form-data">
-        <div class="cm-table-wrap">
-            <table class="cm-table-cont">
-                <colgroup>
-                    <col style="width: 180px;">
-                    <col style="width: *;">
-                    <col style="width: 180px;">
-                    <col style="width: *;">
-                </colgroup>
-                <tbody class="tbody">
-                    <tr class="tr">
-                        <th class="th">상태</th>
-                        <td class="td">
-                            <div class="radio-box">
-                                {{#each CONSTANTS.TRANSPORT_STATUS}} 
-                                <div class="radio-btn-cont">
-                                    <input type="radio" name="transport-status" class="radio-input" value="{{@key}}" {{#customIf @index '===' 0}}checked{{/customIf}}>
-                                    <label class="span">{{this}}</label>
-                                </div>
-                                {{/each}}
-                            </div>
-                        </td>
-                        <th class="th">성별</th>
-                        <td class="td">
-                            <div class="radio-box">
-                                {{#each CONSTANTS.GENDER}} 
-                                <div class="radio-btn-cont">
-                                    <input type="radio" name="gender" class="radio-input" value="{{this}}">
-                                    <label class="span">{{genderParsing this}}</label>
-                                </div>
-                                {{/each}}
-                            </div>
-                        </td>
-                    </tr>
-                    <tr class="tr">
-                        <th class="th require-validation">발생장소 주소</th>
-                        <td class="td">
-                            <div class="cm-input-cont">
-                                <input type="text" name="location-address" class="cm-input-text check active-check"  value="" />
-                                <p class="error-text">유효성 검사 에러 메세지 입니다.</p>
-                            </div>
-                        </td>
-                        <th class="th require-validation">발생장소 상세주소</th>
-                        <td class="td">
-                            <div class="cm-input-cont">
-                                <input type="text" name="location-address-detail" class="cm-input-text check active-check"  value="" />
-                                <p class="error-text">유효성 검사 에러 메세지 입니다.</p>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr class="tr">
-                        <th class="th">이송여부</th>
-                        <td class="td" colspan="3">
-                            <div class="radio-box">
-                                {{#each CONSTANTS.IS_TRANSFER}} 
-                                <div class="radio-btn-cont">
-                                    <input type="radio" name="is-transfer" class="radio-input" value="{{@key}}" {{#customIf @index '===' 0}}checked{{/customIf}}>
-                                    <label class="span">{{this}}</label>
-                                </div>
-                                {{/each}}
-                            </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="btm-btn-wrap d-flex">
-            <button type="button" class="cm-btn cm-btn-full-default cm-btn-middle btn-confirm button-submit">등록</button>
-            <button type="button" class="cm-btn cm-btn-middle btn-go-list button-cancel">목록</button>
-        </div>
-        </form>
-    </div>
-`;
 export const add = `
     <div class="common-cont organ-common-cont">
         <div class="sub-cont-top">

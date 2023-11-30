@@ -95,10 +95,10 @@ export const CONST = {
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
         // 버전은 기본 버전 뒤에 .0부터 올린다.
         CONST.VERSION = `${CONST.VERSION}.0`;
-        CONST.DESIGN.THEME = "seers-mng";
+        CONST.DESIGN.THEME = GBL.DESIGN.THEME;
         CONST.USE.AUTO_LOGON_CHECK.SAVE_ID_CHECK = true;
 
-        const {CONST: LANGUAGE} = await import(`/js/language/${GBL.CONSTANTS.get(`GLOBAL.LOCALE`)}/base.js${ver_string}`);
+        const {CONST: LANGUAGE} = await import(`/js/language/${GBL.CONSTANTS.get(`APP.LOCALE`)}/base.js${ver_string}`);
         CONST.WELCOME.USE = true;
         CONST.WELCOME.MESSAGE = LANGUAGE.MESSAGE['LOGIN-AFTER'];
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////

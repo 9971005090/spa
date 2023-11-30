@@ -228,95 +228,33 @@ export const CONST = {
         },
         getLeftMenuInfo: function() {
             const _getLeftMenuData = function(controller) {
-                if (controller === `hospital` || controller === `fire-station`) {
+                if (controller === `user`) {
                     return {
                         // 'useController': [`hospital`, `fire-station`],
-                        'useController': [`hospital`],
+                        'useController': [`user`],
                         'datas': [
                             {
                                 'controller': `hospital`,
-                                'name': `기관관리`,
+                                'name': `회원관리`,
                                 'data': {
-                                    'info': `{"datas": ["index", "add", "update"]}`,
-                                    'location': `/hospital/index`
-                                }
-                            },
-                            // {
-                            //     'controller': `fire-station`,
-                            //     'name': `소방서관리`,
-                            //     'data': {
-                            //         'info': `{"datas": ["index", "add", "update"]}`,
-                            //         'location': `/fire-station/index`,
-                            //     }
-                            // }
-                        ]
-                    }
-                }
-                else if (controller === `medical-staff` || controller === `paramedic` || controller === `manager` || controller === `administrator`) {
-                    return {
-                        // 'useController': [`medical-staff`, `paramedic`, `manager`, `administrator`],
-                        'useController': [`medical-staff`],
-                        'datas': [
-                            {
-                                'controller': `medical-staff`,
-                                'name': `사용자관리`,
-                                'data': {
-                                    'info': `{"datas": ["index", "add", "update"]}`,
-                                    'location': `/medical-staff/index`
-                                }
-                            },
-                            // {
-                            //     'controller': `paramedic`,
-                            //     'name': `구급대원관리`,
-                            //     'data': {
-                            //         'info': `{"datas": ["index", "add", "update"]}`,
-                            //         'location': `/paramedic/index`,
-                            //     }
-                            // },
-                            // {
-                            //     'controller': `manager`,
-                            //     'name': `병원관리자관리`,
-                            //     'data': {
-                            //         'info': `{"datas": ["index", "add", "update"]}`,
-                            //         'location': `/manager/index`,
-                            //     }
-                            // },
-                            // {
-                            //     'controller': `administrator`,
-                            //     'name': `시스템관리자관리`,
-                            //     'data': {
-                            //         'info': `{"datas": ["index", "add", "update"]}`,
-                            //         'location': `/administrator/index`,
-                            //     }
-                            // }
-                        ]
-                    }
-                }
-                else if (controller === `patient`) {
-                    return {
-                        'useController': [`patient`],
-                        'datas': [
-                            {
-                                'controller': `patient`,
-                                'name': `환자관리`,
-                                'data': {
-                                    'info': `{"datas": ["index", "add", "update"]}`,
-                                    'location': `/patient/index`
+                                    'info': `{"datas": ["index"]}`,
+                                    'location': `/user/index`
                                 }
                             }
                         ]
                     }
                 }
-                else if (controller === `push`) {
+                else if (controller === `board`) {
                     return {
-                        'useController': [`push`],
+                        // 'useController': [`hospital`, `fire-station`],
+                        'useController': [`board`],
                         'datas': [
                             {
-                                'controller': `push`,
-                                'name': `푸시관리`,
+                                'controller': `board`,
+                                'name': `게시판관리`,
                                 'data': {
-                                    'info': `{"datas": ["index", "add", "update"]}`,
-                                    'location': `/push/index`
+                                    'info': `{"datas": ["index"]}`,
+                                    'location': `/board/index`
                                 }
                             }
                         ]
@@ -352,29 +290,11 @@ export const CONST = {
                     `
                 },
                 'controller': {
-                    'hospital': {
-                        'leftMenu': _getLeftMenuData(`hospital`)
+                    'user': {
+                        'leftMenu': _getLeftMenuData(`user`)
                     },
-                    'fire-station': {
-                        'leftMenu': _getLeftMenuData(`fire-station`)
-                    },
-                    'medical-staff': {
-                        'leftMenu': _getLeftMenuData(`medical-staff`)
-                    },
-                    'paramedic': {
-                        'leftMenu': _getLeftMenuData(`paramedic`)
-                    },
-                    'manager': {
-                        'leftMenu': _getLeftMenuData(`manager`)
-                    },
-                    'administrator': {
-                        'leftMenu': _getLeftMenuData(`administrator`)
-                    },
-                    'patient': {
-                        'leftMenu': _getLeftMenuData(`patient`)
-                    },
-                    'push': {
-                        'leftMenu': _getLeftMenuData(`push`)
+                    'board': {
+                        'leftMenu': _getLeftMenuData(`board`)
                     }
                 }
             }

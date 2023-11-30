@@ -15,7 +15,7 @@ let custom = {
                     `/assets/css/common/font-awesome/css/font-awesome-4.7.0.min.css${ver_string}`,
                     `/assets/css/theme/${GBL.DESIGN.THEME}/custom.css${ver_string}`,
                     `/assets/css/theme/${GBL.DESIGN.THEME}/responsive.css${ver_string}`,
-                    `/assets/css/theme/${GBL.DESIGN.THEME}/brain-custom.css${ver_string}`
+                    `/assets/css/theme/${GBL.DESIGN.THEME}/default-custom.css${ver_string}`
                 ],
                 errorAfterType: "stop",
                 callback: loadingEnd
@@ -57,9 +57,9 @@ let custom = {
 
             // 향후 다국어 처리를 위한 기본값
             const {CONST: LANGUAGE_CONST} = await import(`/js/language/constant.js${ver_string}`);
-            initInfo['GLOBAL.LOCALE'] = LANGUAGE_CONST[navigator.language];
-            initInfo['GLOBAL.TIME.ZONE'] = Intl.DateTimeFormat().resolvedOptions().timeZone;
-            initInfo['GLOBAL.TIME.ZONE.OFFSET'] = new Date().getTimezoneOffset() / 60; // hour
+            initInfo['APP.LOCALE'] = LANGUAGE_CONST[navigator.language];
+            initInfo['APP.TIME.ZONE'] = Intl.DateTimeFormat().resolvedOptions().timeZone;
+            initInfo['APP.TIME.ZONE.OFFSET'] = new Date().getTimezoneOffset() / 60; // hour
 
             // 아래 영역에 사이트별 기본 설정이 필요한 값을 정의한다.
             ///////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -431,7 +431,7 @@ let custom = {
                 // }
             }, 1000 * 3);
         },
-        authCheck: async function() {
+        authCheck: async function() {1
             let passingParams = {
                 pageNumber: 1,
                 count: 5
@@ -699,6 +699,7 @@ let custom = {
             GBL.CONSTANTS.set(`SEARCH.OPTIONS`, params, true);
             GBL.CONSTANTS.set(`SEARCH.IS`, true, true)
             const _t = initInfo.useFunction.search(params);
+            console.log("_t::::::", _t);
             if (_t.result === true) {
                 let startVirtualNumber = Number.getStartVirtualNumber(_t.totalCount, initInfo.paging.info.DATA_COUNT, currentPage);
                 if (_t[initInfo.data.resultKey] !== null) {

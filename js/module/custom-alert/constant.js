@@ -1,5 +1,5 @@
 "use strict";
-const {CONST: LANGUAGE} = await import(`/js/language/${GBL.CONSTANTS.get(`GLOBAL.LOCALE`)}/base.js${ver_string}`);
+const {CONST: LANGUAGE} = await import(`/js/language/${GBL.CONSTANTS.get(`APP.LOCALE`)}/base.js${ver_string}`);
 export const CONST = {
     VERSION: "0.1.0",
     DESIGN: {

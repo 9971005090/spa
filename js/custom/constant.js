@@ -7,7 +7,7 @@ GBL.INTERVAL.TYPE = "default";
 GBL.SESSION_RENEW.IS_USE = true;
 GBL.SESSION_RENEW.INTERVAL.TERM = 1000 * 60 * 60 * 2; //두시간;
 GBL.SESSION_RENEW.API.URL = `/AccountUtil/SessionRenew`;
-GBL.ACCOUNT.AFTER_LOGIN_URL = "/hospital/index";
+GBL.ACCOUNT.AFTER_LOGIN_URL = "/board/index";
 GBL.ACCOUNT.IS_AUTH = function(loginMove = false) {
     if(GBL.ACCOUNT.TOKEN == null) {
         if(typeof CookieHelper.get('accessToken') != "undefined") {
@@ -67,7 +67,7 @@ GBL.ACCOUNT.CHECK.RUN = function() {
         GBL.ACCOUNT.IS_AUTH_CHECK();
     }
 }
-GBL.DESIGN.THEME = "brain-saver";
+GBL.DESIGN.THEME = "default";
 GBL.DESIGN.PAGE_DIV_NAME = "#main-cont";
 GBL.DESIGN.PAGE_PARENT_DIV_NAME = "#parent-contents";
 GBL.DESIGN.HEADER_NAME = "#page-header";
@@ -75,7 +75,7 @@ GBL.DESIGN.SIDE_MENU_NAME = "#side-menu";
 GBL.DESIGN.COMMON_DIV_HIDE = [".pop.logout"];
 GBL.DESIGN.APP_VER_DIV_NAME = ".login_container";
 GBL.DESIGN.LAYOUT.IGNORE_CONTROLLER_NAMES = ["login", "error", "logout"];
-GBL.DESIGN.DEFAULT_CONTROLLER = "hospital";
+GBL.DESIGN.DEFAULT_CONTROLLER = "board";
 GBL.DESIGN.DEFAULT_ACTION = "index";
 GBL.DESIGN.APP_EXPLAIN_CONFIRM = true; // 최종 설치 여부..
 GBL.DESIGN.SITE_META.NAME = "BRAIN SAVER";
