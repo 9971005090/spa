@@ -35,5 +35,14 @@ export const CONST = {
             DESC: `DESC`,
             ASC: `ASC`
         }
+    },
+    USE: {
+        CODE: {
+            YES: 1,
+            NO: 0
+        },
+        TITLE: {}
     }
 }
+CONST.USE.TITLE[CONST.USE.CODE.YES] = "사용";
+CONST.USE.TITLE[CONST.USE.CODE.NO] = "비사용";
