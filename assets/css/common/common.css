@@ -1,0 +1,25 @@
+@charset "utf-8";
+
+body {min-height: 100vh;}
+
+#wrap {
+    width: 100%;
+    min-height: 100vh;
+}
+
+/**
+ * 등록/ 수정 화면에서의 필수값 표시 이미지
+ * 불변하게 바뀌지 않을 것들을 최상위 common.css 에 위치 하는게 좋아보임
+.require-validation{
+    position: relative;
+}
+.require-validation:after{
+    content: "";
+    color: #ff0000;
+    margin-left: 5px;
+    width: 10px;
+    height: 10px;
+    background: transparent url(/assets/images/validation-check.svg) left center no-repeat;
+    display: inline-block;
+}
+ */
