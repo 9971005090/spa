@@ -1,8 +1,6 @@
 @charset "utf-8";
 
-body {min-height: 100vh;}
-
-#wrap {
+body {
     width: 100%;
     min-height: 100vh;
 }
