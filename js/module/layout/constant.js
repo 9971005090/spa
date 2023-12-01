@@ -26,7 +26,7 @@ export const CONST = {
         CONST.VERSION = `${CONST.VERSION}.0`;
         CONST.DESIGN.THEME = GBL.DESIGN.THEME;
 
-        CONST.DESIGN.HEADER_BUTTON = ".cm-header .cm-top-menu-ul .menu-list";
+        CONST.DESIGN.HEADER_BUTTON = "header .header-top-menu-ul .menu-list";
         CONST.DESIGN.HEADER_BUTTON_SELECTOR = "selected";
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
     },
@@ -35,14 +35,14 @@ export const CONST = {
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
         SET_HEADER_MENU: function() {
             // 대메뉴 이벤트 처리
-            CUSTOM.EVENT.HTML.push(".cm-header .cm-top-menu-ul .menu-list");
-            $(".cm-header .cm-top-menu-ul .menu-list").off("click").click(function(e) {
+            CUSTOM.EVENT.HTML.push("header .header-top-menu-ul .menu-list");
+            $("header .header-top-menu-ul .menu-list").off("click").click(function(e) {
                 etc.stopBubbling(e);
                 $("#burger-btn.on").removeClass("on")
-                $(".cm-top-menu.on").removeClass("on")
+                $(".header-top-menu.on").removeClass("on")
                 let location = $(this).attr("data-location");
                 let callback = $(this).attr("data-callback");
-                $("#wrap").removeAttr("style");
+                // $("#wrap").removeAttr("style"); // 왜 쓰는지 모르겠다.
                 if(location !== undefined && location !== "") {
                     etc.move(location.toString());
                 }
@@ -65,8 +65,8 @@ export const CONST = {
         },
         SET_LOGO: function() {
             // 로고 클릭 이벤트 처리
-            CUSTOM.EVENT.HTML.push(".cm-header .cm-header-logo-link");
-            $(".cm-header .cm-header-logo-link").off("click").click(function(e) {
+            CUSTOM.EVENT.HTML.push("header .header-logo-link");
+            $("header .header-logo-link").off("click").click(function(e) {
                 etc.stopBubbling(e);
                 etc.move(`/`);
             });
@@ -102,29 +102,29 @@ export const CONST = {
         SET_BURGER: function() {
             CUSTOM.EVENT.HTML.push("#burger-btn");
             $("#burger-btn").off("click").on("click", function(e) {
-                if ($(this).parents(".cm-header-section").hasClass("type02")) {
+                if ($(this).parents(".header-section").hasClass("type02")) {
                     if ($(this).hasClass('active')) {
                         $(this).removeClass('active');
-                        $(`.cm-left-nav`).removeClass("on");
-                        $("#wrap").removeAttr("style");
+                        $(`.main-left-nav`).removeClass("on");
+                        // $("#wrap").removeAttr("style");
                     }
                     else{
                         $(this).addClass('active');
-                        $(`.cm-left-nav`).addClass("on");
+                        $(`.main-left-nav`).addClass("on");
                     }
                 }
                 else {
                     if ($(this).hasClass('on')) {
                         $(this).removeClass('on');
-                        $(`.cm-top-menu`).removeClass("on");
-                        $("#wrap").removeAttr("style");
-                        $(".cm-header-logo-link").removeAttr("style");
+                        $(`.header-top-menu`).removeClass("on");
+                        // $("#wrap").removeAttr("style");
+                        $(".header-logo-link").removeAttr("style");
                     }
                     else {
                         $(this).addClass('on');
-                        $(`.cm-top-menu`).addClass("on");
-                        $("#wrap").css({"height":"100vh", "overflow":"hidden"});
-                        $(".cm-header-logo-link").css({"z-index":"10"});
+                        $(`.header-top-menu`).addClass("on");
+                        // $("#wrap").css({"height":"100vh", "overflow":"hidden"});
+                        $(".header-logo-link").css({"z-index":"10"});
                     }
                 }
             });
@@ -151,8 +151,8 @@ export const CONST = {
             });
 
             // 전체 페이지 영역을 클릭하면 닫혀야(안보여야) 하는 div 를 모두 닫는다.
-            CUSTOM.EVENT.HTML.push("#wrap");
-            $('#wrap').off("click").click(function(e) {
+            CUSTOM.EVENT.HTML.push("body");
+            $('body').off("click").click(function(e) {
                 // etc.stopBubbling(e);
                 etc.commonDivHide();
                 custom.etc.commonDivHide();
@@ -168,7 +168,7 @@ export const CONST = {
             CONST.EVENT.SET_HEADER_MENU();
 
             // 좌측 메뉴 세팅
-            CONST.POST_PROCESS.setLeftMenu(`.cm-left-nav-section.nav-type-long`, `.cm-left-nav-section.nav-type-long .gnb.scroll-bar`, CONST.EVENT.SET_LEFT_MENU, true);
+            CONST.POST_PROCESS.setLeftMenu(`.main-left-nav-section.nav-type-long`, `.main-left-nav-section.nav-type-long .gnb.scroll-bar`, CONST.EVENT.SET_LEFT_MENU, true);
 
             // 페이지 타이틀/ 네비게이션 세팅
             CONST.POST_PROCESS.setPageTitle();
@@ -206,7 +206,7 @@ export const CONST = {
                     location: null
                 },
             }
-            $(`.cm-header .cm-top-menu-ul .menu-list`).each(function(index, item) {
+            $(`header .header-top-menu-ul .menu-list`).each(function(index, item) {
                 console.log("$(item).class:::", $(item).attr(`class`));
                 if ($(item).hasClass(`selected`) === true) {
                     choiceMenu.header.name = $(item).text();
@@ -214,7 +214,7 @@ export const CONST = {
                     return false;
                 }
             });
-            $(`.cm-left-nav-section.nav-type-long .gnb-list`).each(function(index, item) {
+            $(`.main-left-nav-section.nav-type-long .gnb-list`).each(function(index, item) {
                 if ($(item).hasClass(`selected`)) {
                     choiceMenu.left.name = $(item).text();
                     choiceMenu.left.location = $(this).attr("data-location").toString();
@@ -223,8 +223,8 @@ export const CONST = {
             });
 
             const leftMenuData = CONST.POST_PROCESS.getLeftMenuInfo();
-            $(`.cm-main-content .page-top`).html(``);
-            etc.setHtmlParsing($(`.cm-main-content .page-top`), leftMenuData.design.pageNavigationDataTable, {choiceMenu: choiceMenu}, true);
+            $(`.main-section-content .page-top`).html(``);
+            etc.setHtmlParsing($(`.main-section-content .page-top`), leftMenuData.design.pageNavigationDataTable, {choiceMenu: choiceMenu}, true);
         },
         getLeftMenuInfo: function() {
             const _getLeftMenuData = function(controller) {
@@ -334,7 +334,7 @@ export const CONST = {
             }
         },
         setHeaderSelected: function() {
-            $(".cm-header .cm-top-menu-ul .menu-list").each(function(index, item) {
+            $("header .header-top-menu-ul .menu-list").each(function(index, item) {
                 let objInfoDatas = JSON.parse($(item).attr("data-info"));
                 if(objInfoDatas.datas.indexOf(GBL.CONSTANTS.get(`NOW_CONTROLLER`)) !== -1) {
                     $(item).removeClass('selected').addClass('selected');

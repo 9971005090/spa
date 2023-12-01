@@ -5,6 +5,7 @@ const promise = async () => {
     const {CONST: BOARD_CONST} = await import(`/js/custom/constant/board/constant.js${ver_string}`);
     const {UTIL: BOARD_UTIL} = await import(`/js/custom/constant/board/util.js${ver_string}`);
     const {EVENT: SEARCH_TERM_EVENT, UTIL: SEARCH_TERM_UTIL} = await import(`/js/custom/constant/event/search-term.js${ver_string}`);
+    const {EVENT: SELECT_BOX_EVENT} = await import(`/js/custom/constant/event/select-box.js${ver_string}`);
     const {CONST: LANGUAGE} = await import(`/js/language/${GBL.CONSTANTS.get(`APP.LOCALE`)}/base.js${ver_string}`);
     const html = await import(`/template/${GBL.DESIGN.THEME}/content/board.js${ver_string}`);
     const htmlForUnit = await import(`/template/${GBL.DESIGN.THEME}/content/unit.js${ver_string}`);
@@ -66,6 +67,11 @@ const promise = async () => {
     }
     const setAddEvent = function(content = `index`){
         if (content === `index`) {
+            const selectBoxCallback = function (choiceBox) {
+                let selectObj = $(choiceBox).parents(".cm-select-box");
+                selectObj.children(".check").val($(choiceBox).data("code"));
+            }
+            SELECT_BOX_EVENT.ON_CLICK(`.cm-select-box`, `.option-list`, `.option-item`, `.label`, `selected`, selectBoxCallback);
             SEARCH_TERM_EVENT.SET_INIT();
 
             CUSTOM.EVENT.HTML.push(".btn-add");
