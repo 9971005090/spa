@@ -340,8 +340,8 @@ const promise = async () => {
             // }
         }
         // GBL.CONSTANTS.set(`CONSTANTS`, _c, true);
-        $(`${GBL.DESIGN.PAGE_DIV_NAME}`).html(``);
-        etc.setHtmlParsing($(`${GBL.DESIGN.PAGE_DIV_NAME}`), html.index, params);
+        $(`${GBL.DESIGN.PAGE_DIV_NAME} > article`).html(``);
+        etc.setHtmlParsing($(`${GBL.DESIGN.PAGE_DIV_NAME} > article`), html.index, params);
         SEARCH_TERM_UTIL.SET_INIT(30, false, _s);
         setAddEvent();
         setTimeout(function() {
@@ -367,8 +367,8 @@ const promise = async () => {
             'organizationTypeList': [HOSPITAL_CONST.TYPE.CODE.BRAIN]
         }
         const _t = HOSPITAL_UTIL.LIST(params);
-        $(`${GBL.DESIGN.PAGE_DIV_NAME}`).html("");
-        etc.setHtmlParsing($(`${GBL.DESIGN.PAGE_DIV_NAME}`), html.add, {title: `등록`, hospital: _t.organizationList});
+        $(`${GBL.DESIGN.PAGE_DIV_NAME} > article`).html("");
+        etc.setHtmlParsing($(`${GBL.DESIGN.PAGE_DIV_NAME} > article`), html.add, {title: `등록`, hospital: _t.organizationList});
         SEARCH_TERM_UTIL.SET_UNIT_INIT(`#symptom-date`, true);
         custom.etc.removeLoading();
         setAddEvent("add");
@@ -394,8 +394,8 @@ const promise = async () => {
         const _t = BOARD_UTIL.INFO(params.measurementCode);
         if (_t.result === true) {
             _t.brainSaverboard = BOARD_UTIL.DATA_PARSING(_t.brainSaverboard);
-            $(`${GBL.DESIGN.PAGE_DIV_NAME}`).html("");
-            etc.setHtmlParsing($(`${GBL.DESIGN.PAGE_DIV_NAME}`), html.update, {title: `수정`, brainSaverboard: _t.brainSaverboard});
+            $(`${GBL.DESIGN.PAGE_DIV_NAME} > article`).html("");
+            etc.setHtmlParsing($(`${GBL.DESIGN.PAGE_DIV_NAME} > article`), html.update, {title: `수정`, brainSaverboard: _t.brainSaverboard});
             SEARCH_TERM_UTIL.SET_UNIT_INIT(`#symptom-date`, false);
             custom.etc.removeLoading();
             setAddEvent(`update`);

@@ -1,92 +1,90 @@
 "use strict";
 export const index = `
-    <div class="common-cont">
-        <div class="sub-cont-top">
-            <h4 class="sub-cont-title"></h4>
-            <div class="d-flex">
-                <button type="button" class="cm-btn cm-btn-middle btn-add">등록</button>
-                <button type="button" class="cm-btn cm-btn-icon-large btn-download-excel button-excel" style="margin-left: 2px;"> 
-                    <span class="icon"></span>
-                    <span class="txt">엑셀다운로드</span>
-                </button>
-            </div>
+    <div class="sub-cont-top">
+        <h4 class="sub-cont-title"></h4>
+        <div class="d-flex">
+            <button type="button" class="cm-btn cm-btn-middle btn-add">등록</button>
+            <button type="button" class="cm-btn cm-btn-icon-large btn-download-excel button-excel" style="margin-left: 2px;"> 
+                <span class="icon"></span>
+                <span class="txt">엑셀다운로드</span>
+            </button>
         </div>
-        <form class="form-common-search">
-        <div class="search-form">
-            <div class="search-wrap">
-                <div class="d-flex">
-                    <div class="tit">검색기간</div>
-                    <div class="cont">
-                        <div class="search-date-wrap">
-                            <div class="search-date-cont start-calendar">
-                                <input type="text" class="search-data-input" id="form-common-search-start-date" placeholder="YYYY.MM.DD" readonly />    
-                                <span class="img"></span>
-                            </div>
-                            <p class="p">-</p>
-                            <div class="search-date-cont end-calendar">
-                                <input type="text" class="search-data-input" id="form-common-search-end-date" placeholder="YYYY.MM.DD" readonly />    
-                                <span class="img"></span>
-                            </div>
-                            <input type="hidden" id="form-common-search-term" value="30">
-                            <button type="button" class="cm-btn cm-btn-small btn-black button-search-term selected" data-term="30">1개월</button>
-                            <button type="button" class="cm-btn cm-btn-small btn-black button-search-term" data-term="60">3개월</button>
-                            <button type="button" class="cm-btn cm-btn-small btn-black button-search-term" data-term="-1">전체</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="d-flex">
-                    <div class="tit">검색어</div>
-                    <div class="cont">
-                        <div class="cm-device-search">
-                            <span class="span d-none">검색</span>
-                            <div class="default-background common-search-input">
-                                <img class="search-icon d-none" src="/assets/images/theme/{{THEME}}/icon/search.png">
-                                <input type="text" class="font-size-14 font-weight-500 search-input-enter form-common-search-keyword" placeholder="검색어" value="{{choiceSearchOptions.search}}">
-                            </div>  
-                            <button type="button" class="device-search-btn form-common-search-button">
-                                <span class="img"></span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </form>
-        <div class="cm-table-wrap board-view">
-            <div class="cm-table-cont">
-                <div class="cm-colgroup">
-                    <div style="width:5%"></div>
-                    <div style=""></div>
-                    <div style="width:7%"></div>
-                    <div style="width:7%"></div>
-                    <div style="width:7%"></div>
-                    <div style="width:7%"></div>
-                    <div style="width:7%"></div>
-                    <div style="width:7%"></div>
-                    <div style="width:7%"></div>
-                    <div style="width:15%"></div>
-                    <div style="width:10%"></div>
-                </div>
-                <div class="cm-thead">
-                    <div class="cm-tr">
-                        <p class="cm-th">번호</p>
-                        <p class="cm-th">이름</p>
-                        <p class="cm-th">목록권한</p>
-                        <p class="cm-th">읽기권한</p>
-                        <p class="cm-th">쓰기권한</p>
-                        <p class="cm-th">답글권한</p>
-                        <p class="cm-th">코멘트퀀한</p>
-                        <p class="cm-th">답글사용</p>
-                        <p class="cm-th">코멘트사용</p>
-                        <p class="cm-th">수정시간</p>
-                        <p class="cm-th">관리</p>
-                    </div>
-                </div>
-                <div class="cm-tbody" id="contents-by-data-table"></div>
-            </div>
-        </div>
-        <div class="pagination board-pagination" id="pagination"></div>
     </div>
+    <form class="form-common-search">
+    <div class="search-form">
+        <div class="search-wrap">
+            <div class="d-flex">
+                <div class="tit">검색기간</div>
+                <div class="cont">
+                    <div class="search-date-wrap">
+                        <div class="search-date-cont start-calendar">
+                            <input type="text" class="search-data-input" id="form-common-search-start-date" placeholder="YYYY.MM.DD" readonly />    
+                            <span class="img"></span>
+                        </div>
+                        <p class="p">-</p>
+                        <div class="search-date-cont end-calendar">
+                            <input type="text" class="search-data-input" id="form-common-search-end-date" placeholder="YYYY.MM.DD" readonly />    
+                            <span class="img"></span>
+                        </div>
+                        <input type="hidden" id="form-common-search-term" value="30">
+                        <button type="button" class="cm-btn cm-btn-small btn-black button-search-term selected" data-term="30">1개월</button>
+                        <button type="button" class="cm-btn cm-btn-small btn-black button-search-term" data-term="60">3개월</button>
+                        <button type="button" class="cm-btn cm-btn-small btn-black button-search-term" data-term="-1">전체</button>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex">
+                <div class="tit">검색어</div>
+                <div class="cont">
+                    <div class="cm-device-search">
+                        <span class="span d-none">검색</span>
+                        <div class="default-background common-search-input">
+                            <img class="search-icon d-none" src="/assets/images/theme/{{THEME}}/icon/search.png">
+                            <input type="text" class="font-size-14 font-weight-500 search-input-enter form-common-search-keyword" placeholder="검색어" value="{{choiceSearchOptions.search}}">
+                        </div>  
+                        <button type="button" class="device-search-btn form-common-search-button">
+                            <span class="img"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </form>
+    <div class="cm-table-wrap board-view">
+        <div class="cm-table-cont">
+            <div class="cm-colgroup">
+                <div style="width:5%"></div>
+                <div style=""></div>
+                <div style="width:7%"></div>
+                <div style="width:7%"></div>
+                <div style="width:7%"></div>
+                <div style="width:7%"></div>
+                <div style="width:7%"></div>
+                <div style="width:7%"></div>
+                <div style="width:7%"></div>
+                <div style="width:15%"></div>
+                <div style="width:10%"></div>
+            </div>
+            <div class="cm-thead">
+                <div class="cm-tr">
+                    <p class="cm-th">번호</p>
+                    <p class="cm-th">이름</p>
+                    <p class="cm-th">목록권한</p>
+                    <p class="cm-th">읽기권한</p>
+                    <p class="cm-th">쓰기권한</p>
+                    <p class="cm-th">답글권한</p>
+                    <p class="cm-th">코멘트퀀한</p>
+                    <p class="cm-th">답글사용</p>
+                    <p class="cm-th">코멘트사용</p>
+                    <p class="cm-th">수정시간</p>
+                    <p class="cm-th">관리</p>
+                </div>
+            </div>
+            <div class="cm-tbody" id="contents-by-data-table"></div>
+        </div>
+    </div>
+    <div class="pagination board-pagination" id="pagination"></div>
 `;
 
 export const dataTable = `
