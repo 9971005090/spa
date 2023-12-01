@@ -23,9 +23,9 @@ export const html = `
                 <li class="menu-list" data-info='{"datas": ["board"]}' data-location="/hospital/index">게시판관리</li>
             </ul>        
         </nav>
-        <article class="header-left-cont d-none">
+        <article class="header-left-content d-none">
         </article>
-        <article class="header-right-cont">
+        <article class="header-right-content">
             <p class="p">
                 <span class="span member-name">{{ACCOUNT.name}}</span>
                 <span class="span txt d-none">님 로그인 하셨습니다.</span>

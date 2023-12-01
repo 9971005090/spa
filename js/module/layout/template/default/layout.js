@@ -12,17 +12,17 @@ export const html = `
             {{{leftMenu}}}
         </nav>
         <!-- //main-left-nav -->
-        <!-- main-section-content -->
-        <section class="main-section-content" id="main-contents">
+        <!-- main-section -->
+        <section class="main-section" id="main-contents">
             <div class="page-top"></div>
             <article id="main-cont"></article>
         </section>
-        <!-- // main-section-content -->
+        <!-- // main-section -->
     </main>
     <!-- // wrap-cont -->
     
     <!-- footer -->
-    <footer id="footer" class="cm-footer">
+    <footer id="footer" class="footer">
         {{{footer}}}
     </footer>
     <!-- // parent container -->         

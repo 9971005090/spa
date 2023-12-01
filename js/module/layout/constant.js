@@ -223,8 +223,8 @@ export const CONST = {
             });
 
             const leftMenuData = CONST.POST_PROCESS.getLeftMenuInfo();
-            $(`.main-section-content .page-top`).html(``);
-            etc.setHtmlParsing($(`.main-section-content .page-top`), leftMenuData.design.pageNavigationDataTable, {choiceMenu: choiceMenu}, true);
+            $(`.main-section .page-top`).html(``);
+            etc.setHtmlParsing($(`.main-section .page-top`), leftMenuData.design.pageNavigationDataTable, {choiceMenu: choiceMenu}, true);
         },
         getLeftMenuInfo: function() {
             const _getLeftMenuData = function(controller) {
