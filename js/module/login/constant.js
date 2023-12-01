@@ -101,6 +101,8 @@ export const CONST = {
         const {CONST: LANGUAGE} = await import(`/js/language/${GBL.CONSTANTS.get(`APP.LOCALE`)}/base.js${ver_string}`);
         CONST.WELCOME.USE = true;
         CONST.WELCOME.MESSAGE = LANGUAGE.MESSAGE['LOGIN-AFTER'];
+
+        CONST.SET_FAKE_API();
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
     },
     UTIL: {
@@ -144,6 +146,75 @@ export const CONST = {
         // controller에 index이외의 action이 있다면 직접 추가
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    },
+    SET_FAKE_API: function () {
+        GBL.API.FAKE[CONST.API.LOGIN] = true;
+        FAKE_API_JSON[CONST.API.LOGIN] = {
+            "result": true,
+            "extra": null,
+            "error": 0,
+            "message": null,
+            "remoteIp": "123.143.78.43",
+            "accessToken": "TEST_test_20231130115118333_2K9N9P5T_TOKEN_WEB",
+            "userAccount": {
+                "id": "test",
+                "password": null,
+                "organizationCode": "TEST",
+                "userCode": "TEST_test",
+                "employeeCode": null,
+                "department": null,
+                "position": null,
+                "level": 8,
+                "name": "test",
+                "phoneNumber": "01073665332",
+                "email": "9971005090@naver.com",
+                "status": 0,
+                "dateTime": "2021-12-28 12:23:27",
+                "gmtCode": "GMT+0900",
+                "timezone": "Asia/Seoul",
+                "updateDateTime": null,
+                "lastUpdatePwDateTime": "2021-12-28 12:23:27",
+                "modifyPwAlertDateTime": null,
+                "deactivateDateTime": null,
+                "organizationName": "test",
+                "profilePhotoUrl": null,
+                "accountType": 0,
+                "fireStationAddressId": 0,
+                "wardSimple": null
+            },
+            "organization": {
+                "organizationId": 74,
+                "organizationCode": "SEERS",
+                "organizationName": "test",
+                "countryCode": "Ko",
+                "countryName": "Korea",
+                "state": "test",
+                "city": "test, test",
+                "address": "test, test",
+                "latitude": 11.380262,
+                "longitude": 111.115272,
+                "phoneNumber": "+test",
+                "level": 10,
+                "expiration": 0,
+                "expirationDateTime": "2220-10-27 12:04:24",
+                "dateTime": "2021-12-28 17:37:24",
+                "gmtCode": "GMT+0900",
+                "timezone": "Asia/Seoul",
+                "etc": "test",
+                "organizationType": 0,
+                "strokeType": 0,
+                "navigationInfo": null
+            },
+            "apiServerInfoList": null,
+            "wardSimpleList": null,
+            "wardSimple": null,
+            "emergencyTransportPatientInfo": null,
+            "loginFailCount": 0,
+            "loginFailMaxCount": 0,
+            "doctorDepartment": null,
+            "brainSaverPatient": null,
+            "fireStationAddress": null
+        }
     }
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 }
