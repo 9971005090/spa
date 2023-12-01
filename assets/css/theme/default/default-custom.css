@@ -15,7 +15,7 @@ main {
     margin: 20px;
     border-radius: 20px;
 }
-#main-cont {
+.main-section-article {
     background: var(--white);
     padding: 24px 30px;
 }
@@ -791,7 +791,7 @@ table.cm-table-cont{
         margin: 0 20px;
         flex-wrap: wrap;
     }
-    #main-cont{
+    .main-section-article{
         padding: 24px 20px;
     }
     .search-form .tit{

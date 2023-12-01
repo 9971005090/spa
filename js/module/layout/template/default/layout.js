@@ -15,7 +15,7 @@ export const html = `
         <!-- main-section -->
         <section class="main-section" id="main-contents">
             <div class="page-top"></div>
-            <article id="main-cont"></article>
+            <article class="main-section-article"></article>
         </section>
         <!-- // main-section -->
     </main>
