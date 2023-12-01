@@ -56,7 +56,7 @@
         margin-left: 16px;
     }
     #burger-btn{ z-index:2; }
-    .header .header-left-cont{
+    .header .header-left-content{
         margin-left: 24px;
     }
     .header .header-logo{ margin:0; }
@@ -98,7 +98,7 @@
         padding: 0 32px;
     }
 
-    .header .header-right-cont .logout_btn {
+    .header .header-right-content .logout_btn {
         margin-left: 32px;
     }
 
@@ -334,10 +334,10 @@
     .header .header-top-menu.on {
         width: 80vw;
     }
-    .header .header-right-cont .p{
+    .header .header-right-content .p{
         font-size: 14px;
     }
-    .header .header-right-cont .logout_btn {
+    .header .header-right-content .logout_btn {
         margin-left: 5vw;
     }
 
@@ -403,8 +403,8 @@
     .header .header-top-menu.on {
         width: 100vw;
     }
-    .header .header-right-cont .p .span.txt{ display:none; }
-    .header .header-right-cont .logout_btn {
+    .header .header-right-content .p .span.txt{ display:none; }
+    .header .header-right-content .logout_btn {
         margin-left: 4vw;
     }
 
@@ -419,13 +419,13 @@
         height: 44px;
     }
 
-    /* main-section-content */
-    .main-section-content{
+    /* main-section */
+    .main-section{
         padding-bottom: 52px;
     }
 
     /* footer */
-    .cm-footer .cm-footer-section{
+    .footer .footer-section{
         padding:28px 24px;
     }
 
