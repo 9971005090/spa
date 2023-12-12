@@ -7,15 +7,15 @@ main {
     background: var(--blue-gray);
 }
 
-/* main-section */
-.main-section{
+/* main section */
+main section{
     position: relative;
     min-height: calc(100vh - 80px - 56px - 40px);
     background: var(--white);
     margin: 20px;
     border-radius: 20px;
 }
-.main-section-article {
+main section article {
     background: var(--white);
     padding: 24px 30px;
 }
@@ -29,26 +29,26 @@ header{
     min-height: 70px;
     border-bottom: 1px solid var(--light-gray-100);
 }
-.header .header-section{
+header section{
     background: #fff;
     color: var(--black);
 }
-.header .header-logo{
+header .header-logo{
     height: 100%;
     display: flex;
     align-items: center;
     margin: 0;
 }
-.header .header-logo-link .logo-txt{
+header .header-logo-link .logo-txt{
     color: var(--black);
     font-size: 20px;
     font-weight: 700;
     text-transform: uppercase;
 }
-header .header-top-menu{
+header menu{
     margin-left: 30px;
 }
-header .header-top-menu .header-top-menu-ul .menu-list{
+header menu ul .menu-list{
     width: auto;
     max-width: none;
     font-size: 15px;
@@ -59,12 +59,12 @@ header .header-top-menu .header-top-menu-ul .menu-list{
     padding: 0 20px;
     color: var(--black);
 }
-header .header-top-menu .header-top-menu-ul .menu-list.selected,
-header .header-top-menu .header-top-menu-ul .menu-list:hover{
+header menu ul .menu-list.selected,
+header menu ul .menu-list:hover{
     position: relative;
     background: unset;
 }
-header .header-top-menu .header-top-menu-ul .menu-list.selected:before{
+header menu ul .menu-list.selected:before{
     position: absolute;
     bottom:0;
     left:0;
@@ -104,22 +104,22 @@ header .header-right-content .p .span.member-name{
     cursor: default;
 }
 /* left menu */
-header:has(.header-section.type02) + main .main-left-nav:has(.nav-type-long){
+header:has(section) + main menu:has(.nav-type-long){
     width: 240px;
     background: var(--blue-gray);
     border:0;
     transition: 0.2s all ease-out;
 }
-header:has(.header-section.type02) + main .main-left-nav .nav-type-long .gnb{
+header:has(section) + main menu .nav-type-long .gnb{
     width: 240px;
 }
-header:has(.header-section.type02) + main .main-left-nav .nav-type-long .gnb .gnb-list{
+header:has(section) + main menu .nav-type-long .gnb .gnb-list{
     padding: 20px 0 0 20px;
 }
-header:has(.header-section.type02) + main .main-left-nav .nav-type-long .gnb .gnb-list.selected .link{
+header:has(section) + main menu .nav-type-long .gnb .gnb-list.selected .link{
     background: var(--white);
 }
-header:has(.header-section.type02) + main .main-left-nav .nav-type-long .gnb .link{
+header:has(section) + main menu .nav-type-long .gnb .link{
     padding: 16px 24px;
     border-radius: 24px;
 }
@@ -128,13 +128,13 @@ header:has(.header-section.type02) + main .main-left-nav .nav-type-long .gnb .li
 }
 
 /* footer */
-.footer{
+footer{
     border-top: 1px solid #e5e5e5;
 }
-.footer .footer-section{
+footer section{
     background: var(--white);
 }
-.footer .footer-section .footer-section-bottom{
+footer section .footer-section-bottom{
     width: 100%;
     text-align: center;
 }
@@ -146,11 +146,11 @@ header:has(.header-section.type02) + main .main-left-nav .nav-type-long .gnb .li
     width: 260px;
     border-right: 1px solid var(--light-gray-100);
 }
-.main-left-nav .nav-type-long .gnb-list.selected .link, .main-left-nav .nav-type-long .gnb-list.selected:hover .link{
+main menu .nav-type-long .gnb-list.selected .link, main menu .nav-type-long .gnb-list.selected:hover .link{
     color: var(--blue-200);
     font-weight: 500;
 }
-.main-section .page-top{
+main section .page-top{
     border-color: var(--light-gray-100);
 }
 .page-nav{
@@ -294,7 +294,7 @@ header:has(.header-section.type02) + main .main-left-nav .nav-type-long .gnb .li
 .search-date-cont .img{
     width: 20px;
     height: 20px;
-    background: url(/assets/images/theme/brain-saver/calendar.svg) no-repeat center;
+    background: url(/assets/images/theme/default/calendar.svg) no-repeat center;
     background-size: 13px;
 }
 .search-date-cont + .p{
@@ -572,8 +572,8 @@ table.cm-table-cont{
     color: #fff;
 }
 .btn-download-excel .icon{
-    mask-image: url(/assets/images/theme/brain-saver/excel.svg);
-    -webkit-mask-image: url(/assets/images/theme/brain-saver/excel.svg);
+    mask-image: url(/assets/images/theme/default/excel.svg);
+    -webkit-mask-image: url(/assets/images/theme/default/excel.svg);
     background: #2e7d32;
 }
 .btn-download-excel:hover .icon{
@@ -600,7 +600,7 @@ table.cm-table-cont{
     margin-left: 5px;
     width: 10px;
     height: 10px;
-    background: transparent url(/assets/images/theme/brain-saver/icon/validation-check.svg) left center no-repeat;
+    background: transparent url(/assets/images/theme/default/icon/validation-check.svg) left center no-repeat;
     display: inline-block;
 }
 
@@ -744,7 +744,7 @@ table.cm-table-cont{
 }
 
 @media screen and (max-width:1023px) {
-    header:has(.header-section.type02) + main .main-left-nav:has(.nav-type-long) .nav-type-long .gnb .gnb-list{
+    header:has(section) + main menu:has(.nav-type-long) .nav-type-long .gnb .gnb-list{
         padding: 12px 20px 0 20px;
         text-align: left;
     }
@@ -770,7 +770,7 @@ table.cm-table-cont{
         gap: 4px;
     }
 
-    .main-section{
+    main section{
         min-height: calc(100vh - 111px - 56px - 40px);
     }
 
@@ -787,11 +787,11 @@ table.cm-table-cont{
 }
 
 @media screen and (max-width:767px) {
-    .main-section .page-top{
+    main section .page-top{
         margin: 0 20px;
         flex-wrap: wrap;
     }
-    .main-section-article{
+    main section article{
         padding: 24px 20px;
     }
     .search-form .tit{
@@ -831,7 +831,7 @@ table.cm-table-cont{
 }
 
 @media screen and (max-width: 487px){
-    .main-section {
+    main section {
         padding-bottom: 0;
     }
     header .header-logo-link .logo-txt{

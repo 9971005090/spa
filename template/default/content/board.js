@@ -27,9 +27,9 @@ export const index = `
                             <span class="img"></span>
                         </div>
                         <input type="hidden" id="form-common-search-term" value="30">
-                        <button type="button" class="cm-btn cm-btn-small btn-black button-search-term selected" data-term="30">1개월</button>
-                        <button type="button" class="cm-btn cm-btn-small btn-black button-search-term" data-term="60">3개월</button>
-                        <button type="button" class="cm-btn cm-btn-small btn-black button-search-term" data-term="-1">전체</button>
+                        <button type="button" class="cm-btn cm-btn-auto btn-black button-search-term selected" data-term="30">1개월</button>
+                        <button type="button" class="cm-btn cm-btn-auto btn-black button-search-term" data-term="60">3개월</button>
+                        <button type="button" class="cm-btn cm-btn-auto btn-black button-search-term" data-term="-1">전체</button>
                     </div>
                 </div>
             </div>
@@ -127,8 +127,10 @@ export const dataTable = `
         {{updateDateTime}}
     </p>
     <p class="cm-td">
-        <button type="button" class="cm-btn cm-btn-small btn-black button-update">수정</button>        
-        <button type="button" class="cm-btn cm-btn-small cm-btn-n-default btn-delete button-delete">삭제</button>
+<!--        <button type="button" class="cm-btn cm-btn-small btn-black button-update">수정</button>        -->
+<!--        <button type="button" class="cm-btn cm-btn-small cm-btn-n-default btn-delete button-delete">삭제</button>-->
+        <button type="button" class="button button-blue button-small button-update">수정</button>
+        <button type="button" class="button button-red button-small button-delete">삭제</button>
     </p>
 </div>
 {{/each}}

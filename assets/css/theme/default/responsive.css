@@ -56,11 +56,11 @@
         margin-left: 16px;
     }
     #burger-btn{ z-index:2; }
-    .header .header-left-content{
+    header .header-left-content{
         margin-left: 24px;
     }
-    .header .header-logo{ margin:0; }
-    .header .header-top-menu{
+    header .header-logo{ margin:0; }
+    header menu{
         position: absolute;
         top: 0;
         left: -300vw;
@@ -70,26 +70,26 @@
         background: linear-gradient(180deg, #002244 0%, #0066BB 100%);
         transition: 0.4s left ease-in-out;
     }
-    .header .header-top-menu.on{
+    header menu.on{
         left: -60px;
     }
-    .header .header-top-menu .header-top-menu-ul{
+    header menu ul{
         flex-direction: column;
         position: relative;
         top: 48px;
         max-height: calc(100% - 48px);
         overflow-y: auto;
     }
-    .header .header-top-menu .header-top-menu-ul::-webkit-scrollbar{
+    header menu ul::-webkit-scrollbar{
         width: 8px;
         height: 8px;
     }
-    .header .header-top-menu .header-top-menu-ul::-webkit-scrollbar-thumb{
+    header menu ul::-webkit-scrollbar-thumb{
         border-radius: 10px;
         background: var(--scroll-bar);
     }
 
-    .header .header-top-menu .header-top-menu-ul .menu-list{
+    header menu ul .menu-list{
         height: 60px;
         min-height:60px;
         max-width: none;
@@ -98,12 +98,12 @@
         padding: 0 32px;
     }
 
-    .header .header-right-content .logout_btn {
+    header .header-right-content .logout_btn {
         margin-left: 32px;
     }
 
-    /* main-left-nav */
-    .main-left-nav{
+    /* main menu */
+    main menu{
         position: absolute;
         left: 0;
         top: 0;
@@ -111,12 +111,12 @@
         height: auto;
         z-index: 1;
     }
-    .main-left-nav .gnb{
+    main menu .gnb{
         display: flex;
         justify-content: center;
         align-items: center;
     }
-    .main-left-nav .gnb .gnb-list{
+    main menu .gnb .gnb-list{
         padding: 0;
         margin: 0 4px;
         text-align: center;
@@ -124,66 +124,66 @@
         width: auto;
         height: 48px;
     }
-    .main-left-nav .gnb .gnb-list .link .txt{
+    main menu .gnb .gnb-list .link .txt{
         width: 100%;
         overflow: hidden;
         text-overflow: ellipsis;
     }
-    .main-left-nav .main-left-nav-section{
+    main menu .main-left-nav-section{
         height: 100%;
     }
-    .main-left-nav.on{
+    main menu.on{
         width: 72px;
     }
-    .main-left-nav.on .main-left-nav-section{
+    main menu.on .main-left-nav-section{
         position: absolute;
         top: 0;
         left: 0;
         width: 72px;
         height: auto;
     }
-    .main-left-nav.on .gnb{ width: 100%; left:0; }
-    .main-left-nav .scroll-bar::-webkit-scrollbar{
+    main menu.on .gnb{ width: 100%; left:0; }
+    main menu .scroll-bar::-webkit-scrollbar{
         height: 0.2rem;
     }
 
     /* nav-type-long */
-    .main-left-nav .nav-type-long .gnb .gnb-list{
+    main menu .nav-type-long .gnb .gnb-list{
         display: inline-flex;
         border: 0;
     }
-    .main-left-nav .gnb .icon{
+    main menu .gnb .icon{
         margin-bottom: 4px;
     }
-    .main-left-nav:has(.nav-type-long){
+    main menu:has(.nav-type-long){
         width: 100%;
     }
-    .main-left-nav .nav-type-long .gnb{
+    main menu .nav-type-long .gnb{
         display: block;
         width: auto;
         overflow-x: auto;
         white-space: nowrap;
         text-align: center;
     }
-    .main-left-nav .nav-type-long .gnb .link{
+    main menu .nav-type-long .gnb .link{
         flex-direction: column;
         justify-content: center;
         font-size: inherit;
         padding: 0 4px;
     }
-    .main-left-nav .main-left-nav-section.nav-type-long{
+    main menu .main-left-nav-section.nav-type-long{
         background: #fff;
     }
 
-    .header:has(.header-section.type02){
+    header:has(section){
         height: auto;
     }
-    .header .header-section.type02 .header-name{
+    header section .header-name{
         width: auto;
         height: 60px;
         border-right: 0;
     }
-    .header .header-section.type02 .header-top-menu{
+    header section menu{
         position: static;
         width: 100vw;
         left: 0;
@@ -195,7 +195,7 @@
         height: 50px;
         border-top: 1px solid var(--light-gray-100);
     }
-    .header .header-section.type02 .header-top-menu .header-top-menu-ul{
+    header section menu ul{
         max-height: unset;
         position: static;
         overflow-y: hidden;
@@ -204,38 +204,38 @@
         white-space: nowrap;
         text-align: center;
     }
-    .header .header-section.type02 .header-top-menu .header-top-menu-ul::-webkit-scrollbar {
+    header section menu ul::-webkit-scrollbar {
         height: 5px;
     }
-    .header:has(.header-section.type02) + main .main-left-nav:has(.nav-type-long) .main-left-nav-section.nav-type-long{
+    header:has(section) + main menu:has(.nav-type-long) .main-left-nav-section.nav-type-long{
         background: none;
     }
-    .header:has(.header-section.type02) + main .main-left-nav:has(.nav-type-long){
+    header:has(section) + main menu:has(.nav-type-long){
         height: 100%;
     }
-    .header:has(.header-section.type02) + main .main-left-nav:has(.nav-type-long) .nav-type-long .gnb{
+    header:has(section) + main menu:has(.nav-type-long) .nav-type-long .gnb{
         height: 100%;
         white-space: normal;
         overflow-x: hidden;
     }
-    .header:has(.header-section.type02) + main .main-left-nav:has(.nav-type-long) .nav-type-long .gnb .gnb-list{
+    header:has(section) + main menu:has(.nav-type-long) .nav-type-long .gnb .gnb-list{
         width: 100%;
     }
-    .header:has(.header-section.type02) + main .main-left-nav:has(.nav-type-long).on .main-left-nav-section{
+    header:has(section) + main menu:has(.nav-type-long).on .main-left-nav-section{
         width: 0;
     }
-    .header:has(.header-section.type02) + main .main-left-nav:has(.nav-type-long) .nav-type-long .gnb .link{
+    header:has(section) + main menu:has(.nav-type-long) .nav-type-long .gnb .link{
         font-size: 14px;
     }
 
     /* cm-header-m-nav-link */
-    .header-m-nav-link{
+    header-m-nav-link{
         display:block;
         position: absolute;
         margin: 12px 0 0 49px;
         cursor:pointer;
     }
-    .header-m-nav-link .header-img{
+    header-m-nav-link .header-img{
         width: 64px;
     }
 
@@ -331,13 +331,13 @@
 /* 모바일 가로, 테블릿 */
 @media screen and (max-width:767px) {
     /* cm-header */
-    .header .header-top-menu.on {
+    header menu.on {
         width: 80vw;
     }
-    .header .header-right-content .p{
+    header .header-right-content .p{
         font-size: 14px;
     }
-    .header .header-right-content .logout_btn {
+    header .header-right-content .logout_btn {
         margin-left: 5vw;
     }
 
@@ -400,32 +400,32 @@
 /* 모바일 */
 @media screen and (max-width:487px) {
     /* cm-header */
-    .header .header-top-menu.on {
+    header menu.on {
         width: 100vw;
     }
-    .header .header-right-content .p .span.txt{ display:none; }
-    .header .header-right-content .logout_btn {
+    header .header-right-content .p .span.txt{ display:none; }
+    header .header-right-content .logout_btn {
         margin-left: 4vw;
     }
 
-    /* main-left-nav */
-    .main-left-nav .gnb{
+    /* main menu */
+    main menu .gnb{
         font-size: 10px;
         transition: 0.3s height ease;
     }
-    .main-left-nav .gnb .gnb-list {
+    main menu .gnb .gnb-list {
         min-width: 44px;
         width: auto;
         height: 44px;
     }
 
-    /* main-section */
-    .main-section{
+    /* main section */
+    main section{
         padding-bottom: 52px;
     }
 
     /* footer */
-    .footer .footer-section{
+    footer section{
         padding:28px 24px;
     }
 
