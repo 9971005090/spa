@@ -8,7 +8,7 @@ main {
 }
 
 /* main section */
-main section{
+main > section{
     position: relative;
     min-height: calc(100vh - 80px - 56px - 40px);
     background: var(--white);
