@@ -1,21 +1,22 @@
 "use strict";
 export const html = `
     <!-- header -->
-    <header id="header" class="header">
+    <header>
         {{{header}}}
     </header>
-    <!-- //header -->
+    <!-- // header -->
+    
     <!-- wrap-cont -->
     <main>
         <!-- main-left-nav -->
-        <nav class="main-left-nav">
+        <menu>
             {{{leftMenu}}}
-        </nav>
+        </menu>
         <!-- //main-left-nav -->
         <!-- main-section -->
         <section class="main-section" id="main-contents">
             <div class="page-top"></div>
-            <article class="main-section-article"></article>
+            <article></article>
         </section>
         <!-- // main-section -->
     </main>
@@ -25,5 +26,5 @@ export const html = `
     <footer id="footer" class="footer">
         {{{footer}}}
     </footer>
-    <!-- // parent container -->         
+    <!-- // footer -->         
 `;

@@ -1,6 +1,6 @@
 "use strict";
 export const html = `
-    <section class="header-section type02">
+    <section>
         <div class="header-name">
             <button class="burger-btn" id="burger-btn">
                  <span class="burger-line top-line"></span> 
@@ -14,18 +14,13 @@ export const html = `
                 </a>
             </h1>
         </div>
-        <nav class="header-top-menu">
-            <a class="header-m-nav-link d-none">
-                <!--<img src="/assets/images/theme/{{THEME}}/logo-images/header-logo.svg" class="header-img d-none">
-                <span class="logo-txt d-none">seers</span>-->
-            </a>
-            <ul class="header-top-menu-ul">
-                <li class="menu-list" data-info='{"datas": ["board"]}' data-location="/hospital/index">게시판관리</li>
+        <menu>
+            <ul>
+                <li class="menu-list" data-info='{"datas": ["board"]}' data-location="/board/index">게시판관리</li>
             </ul>        
-        </nav>
-        <article class="header-left-content d-none">
-        </article>
-        <article class="header-right-content">
+        </menu>
+        <div class="header-left-content d-none"></div>
+        <div class="header-right-content">
             <p class="p">
                 <span class="span member-name">{{ACCOUNT.name}}</span>
                 <span class="span txt d-none">님 로그인 하셨습니다.</span>
@@ -34,6 +29,6 @@ export const html = `
             <div class="btn-wrap d-none">
                 <button type="button" class="cm-btn cm-btn-small">버튼</button>
             </div>
-        </article>
+        </div>
     </section>
 `;

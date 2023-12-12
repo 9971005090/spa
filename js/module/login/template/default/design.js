@@ -35,7 +35,7 @@ export const index = `
                     <p class="error-text">비밀번호를 입력해 주세요.</p>
                 </div>
                 <div class="login_module_check2">
-                    <div class="cm-checkbox-box type02 mt-12">
+                    <div class="cm-checkbox-box mt-12">
                         <input class="input login_module_green_custom" type="checkbox" name="login_userId" id="login_userId">
                         <label class="span" for="login_userId">아이디 기억</label>
                     </div>

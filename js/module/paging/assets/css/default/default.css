@@ -46,11 +46,11 @@
     display:block;
     width: 10px;
     height: 6px;
-    mask-image: url(/assets/images/theme/brain-saver/icon/arrow.svg);
+    mask-image: url(/assets/images/theme/default/icon/arrow.svg);
     mask-repeat: no-repeat;
     mask-position: center;
     mask-size: cover;
-    -webkit-mask-image: url(/assets/images/theme/brain-saver/icon/arrow.svg);
+    -webkit-mask-image: url(/assets/images/theme/default/icon/arrow.svg);
     -webkit-mask-repeat: no-repeat;
     -webkit-mask-position: center;
     background-size: cover;
@@ -62,11 +62,11 @@
     display:block;
     width: 16px;
     height: 16px;
-    mask-image: url(/assets/images/theme/brain-saver/icon/arrow-double.svg);
+    mask-image: url(/assets/images/theme/default/icon/arrow-double.svg);
     mask-repeat: no-repeat;
     mask-position: center;
     mask-size: cover;
-    -webkit-mask-image: url(/assets/images/theme/brain-saver/icon/arrow-double.svg);
+    -webkit-mask-image: url(/assets/images/theme/default/icon/arrow-double.svg);
     -webkit-mask-repeat: no-repeat;
     -webkit-mask-position: center;
     background-size: cover;

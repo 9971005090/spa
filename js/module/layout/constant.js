@@ -26,7 +26,7 @@ export const CONST = {
         CONST.VERSION = `${CONST.VERSION}.0`;
         CONST.DESIGN.THEME = GBL.DESIGN.THEME;
 
-        CONST.DESIGN.HEADER_BUTTON = "header .header-top-menu-ul .menu-list";
+        CONST.DESIGN.HEADER_BUTTON = "header ul li";
         CONST.DESIGN.HEADER_BUTTON_SELECTOR = "selected";
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
     },
@@ -35,14 +35,11 @@ export const CONST = {
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
         SET_HEADER_MENU: function() {
             // 대메뉴 이벤트 처리
-            CUSTOM.EVENT.HTML.push("header .header-top-menu-ul .menu-list");
-            $("header .header-top-menu-ul .menu-list").off("click").click(function(e) {
+            CUSTOM.EVENT.HTML.push("header ul li");
+            $("header ul li").off("click").click(function(e) {
                 etc.stopBubbling(e);
-                $("#burger-btn.on").removeClass("on")
-                $(".header-top-menu.on").removeClass("on")
                 let location = $(this).attr("data-location");
                 let callback = $(this).attr("data-callback");
-                // $("#wrap").removeAttr("style"); // 왜 쓰는지 모르겠다.
                 if(location !== undefined && location !== "") {
                     etc.move(location.toString());
                 }
@@ -102,30 +99,13 @@ export const CONST = {
         SET_BURGER: function() {
             CUSTOM.EVENT.HTML.push("#burger-btn");
             $("#burger-btn").off("click").on("click", function(e) {
-                if ($(this).parents(".header-section").hasClass("type02")) {
-                    if ($(this).hasClass('active')) {
-                        $(this).removeClass('active');
-                        $(`.main-left-nav`).removeClass("on");
-                        // $("#wrap").removeAttr("style");
-                    }
-                    else{
-                        $(this).addClass('active');
-                        $(`.main-left-nav`).addClass("on");
-                    }
+                if ($(this).hasClass('active')) {
+                    $(this).removeClass('active');
+                    $(`main menu`).removeClass("on");
                 }
-                else {
-                    if ($(this).hasClass('on')) {
-                        $(this).removeClass('on');
-                        $(`.header-top-menu`).removeClass("on");
-                        // $("#wrap").removeAttr("style");
-                        $(".header-logo-link").removeAttr("style");
-                    }
-                    else {
-                        $(this).addClass('on');
-                        $(`.header-top-menu`).addClass("on");
-                        // $("#wrap").css({"height":"100vh", "overflow":"hidden"});
-                        $(".header-logo-link").css({"z-index":"10"});
-                    }
+                else{
+                    $(this).addClass('active');
+                    $(`main menu`).addClass("on");
                 }
             });
             $("#burger-btn").trigger(`click`);
@@ -206,7 +186,7 @@ export const CONST = {
                     location: null
                 },
             }
-            $(`header .header-top-menu-ul .menu-list`).each(function(index, item) {
+            $(`header ul li`).each(function(index, item) {
                 console.log("$(item).class:::", $(item).attr(`class`));
                 if ($(item).hasClass(`selected`) === true) {
                     choiceMenu.header.name = $(item).text();
@@ -278,7 +258,7 @@ export const CONST = {
                     `,
                     'pageNavigationDataTable': `
                         <h3 class="page-title">{{choiceMenu.left.name}}</h3>
-                        <div class="page-nav">
+                        <nav class="page-nav">
                             <a onclick="etc.move2('{{GLOBAL_CONSTANTS.DEFAULT.CONTROLLER}}', '{{GLOBAL_CONSTANTS.DEFAULT.ACTION}}')" class="page-nav-link go-main-link" style="cursor: pointer">
                                 <span class="fa fa-home"></span>
                             </a>
@@ -286,7 +266,7 @@ export const CONST = {
                             <a onclick="etc.move('{{choiceMenu.header.location}}')" class="page-nav-link" style="cursor: pointer">{{choiceMenu.header.name}}</a>
                             <span class="icon fa fa-angle-right"></span>   
                             <a class="page-nav-link">{{choiceMenu.left.name}}</a>
-                        </div>                    
+                        </nav>                    
                     `
                 },
                 'controller': {
@@ -334,7 +314,7 @@ export const CONST = {
             }
         },
         setHeaderSelected: function() {
-            $("header .header-top-menu-ul .menu-list").each(function(index, item) {
+            $("header ul li").each(function(index, item) {
                 let objInfoDatas = JSON.parse($(item).attr("data-info"));
                 if(objInfoDatas.datas.indexOf(GBL.CONSTANTS.get(`NOW_CONTROLLER`)) !== -1) {
                     $(item).removeClass('selected').addClass('selected');

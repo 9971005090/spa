@@ -616,14 +616,14 @@ let custom = {
                 $(`#app`).removeClass("tablet mobile mobile-small").addClass("pc");
             }
             if($(`#app`).hasClass("pc")){
-                if($(`.main-left-nav`).hasClass("on")){
-                    $(`.main-left-nav`).removeClass("on");
+                if($(`main menu`).hasClass("on")){
+                    $(`main menu`).removeClass("on");
                     $(`.burger-btn`).removeClass("active");
                 }
             }
             else{
-                if(!$(`.main-left-nav`).hasClass("on")){
-                    $(`.main-left-nav`).addClass("on");
+                if(!$(`main menu`).hasClass("on")){
+                    $(`main menu`).addClass("on");
                     $(`.burger-btn`).addClass("active");
                 }
             }

@@ -178,6 +178,7 @@ let appRun = async function() {
             `/assets/css/common/constant.css${ver_string}`,
             `/assets/css/common/reset.css${ver_string}`,
             `/assets/css/common/common.css${ver_string}`,
+            `/assets/css/common/button.css${ver_string}`,
             `/js/common/constant.js${ver_string}`,
             `/js/util/jquery/jquery-3.5.1.min.js${ver_string}`,
             `/js/util/jquery/jquery.cookie-1.4.1.min.js${ver_string}`,
