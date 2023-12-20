@@ -14,7 +14,7 @@ export const html = `
         </menu>
         <!-- //main-left-nav -->
         <!-- main-section -->
-        <section class="main-section" id="main-contents">
+        <section>
             <div class="page-top"></div>
             <article></article>
         </section>
@@ -23,7 +23,7 @@ export const html = `
     <!-- // wrap-cont -->
     
     <!-- footer -->
-    <footer id="footer" class="footer">
+    <footer>
         {{{footer}}}
     </footer>
     <!-- // footer -->         

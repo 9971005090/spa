@@ -7,7 +7,6 @@ export const CONST = {
             COPYRIGHT: true,
             VERSION: true
         },
-        DIV_NAME: GBL.DESIGN.MAIN_DIV_NAME
     },
 
 
@@ -203,8 +202,8 @@ export const CONST = {
             });
 
             const leftMenuData = CONST.POST_PROCESS.getLeftMenuInfo();
-            $(`.main-section .page-top`).html(``);
-            etc.setHtmlParsing($(`.main-section .page-top`), leftMenuData.design.pageNavigationDataTable, {choiceMenu: choiceMenu}, true);
+            $(`main section .page-top`).html(``);
+            etc.setHtmlParsing($(`main section .page-top`), leftMenuData.design.pageNavigationDataTable, {choiceMenu: choiceMenu}, true);
         },
         getLeftMenuInfo: function() {
             const _getLeftMenuData = function(controller) {

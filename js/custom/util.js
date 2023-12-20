@@ -604,18 +604,18 @@ let custom = {
         },
         responsive: function() {
             if(1024 >= $(window).width() && 768 < $(window).width()){
-                $(`#app`).removeClass("pc mobile mobile-small").addClass("tablet");
+                $(`body`).removeClass("pc mobile mobile-small").addClass("tablet");
             }
             else if(768 >= $(window).width() && 488 < $(window).width()) {
-                $(`#app`).removeClass("tablet pc mobile-small").addClass("mobile");
+                $(`body`).removeClass("tablet pc mobile-small").addClass("mobile");
             }
             else if(488 >= $(window).width()){
-                $(`#app`).removeClass("tablet pc mobile").addClass("mobile-small");
+                $(`body`).removeClass("tablet pc mobile").addClass("mobile-small");
             }
             else{
-                $(`#app`).removeClass("tablet mobile mobile-small").addClass("pc");
+                $(`body`).removeClass("tablet mobile mobile-small").addClass("pc");
             }
-            if($(`#app`).hasClass("pc")){
+            if($(`body`).hasClass("pc")){
                 if($(`main menu`).hasClass("on")){
                     $(`main menu`).removeClass("on");
                     $(`.burger-btn`).removeClass("active");

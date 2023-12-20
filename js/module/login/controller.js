@@ -101,8 +101,8 @@ const promise = async () => {
         GBL.ACCOUNT.SET();
 
         // layout 이 없는 디자인이라. 전체 디자인을 초기화
-        $(`${CONST.DESIGN.DIV_NAME}`).html('');
-        etc.setHtmlParsing($(`${CONST.DESIGN.DIV_NAME}`), html.index, {LOGO: CONST.DESIGN.LOGO});
+        $(`body`).html('');
+        etc.setHtmlParsing($(`body`), html.index, {LOGO: CONST.DESIGN.LOGO});
         _setPostProcess("index");
         Seers.Loader.moduleLoad("version", "index");
 

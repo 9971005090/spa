@@ -68,10 +68,10 @@ GBL.ACCOUNT.CHECK.RUN = function() {
     }
 }
 GBL.DESIGN.THEME = "default";
-GBL.DESIGN.PAGE_DIV_NAME = "#main-contents";
+GBL.DESIGN.PAGE_DIV_NAME = "main section";
 // GBL.DESIGN.PAGE_PARENT_DIV_NAME = "#parent-contents";
-GBL.DESIGN.HEADER_NAME = "#page-header";
-GBL.DESIGN.SIDE_MENU_NAME = "#side-menu";
+// GBL.DESIGN.HEADER_NAME = "#page-header";
+// GBL.DESIGN.SIDE_MENU_NAME = "#side-menu";
 GBL.DESIGN.COMMON_DIV_HIDE = [".pop.logout"];
 GBL.DESIGN.APP_VER_DIV_NAME = ".login_container";
 GBL.DESIGN.LAYOUT.IGNORE_CONTROLLER_NAMES = ["login", "error", "logout"];
