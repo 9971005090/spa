@@ -21,8 +21,8 @@ const promise = async () => {
             header: etc.setHtmlParsing(null, header.html, {}, false),
             footer: etc.setHtmlParsing(null, footer.html, {}, false)
         }
-        let htmlLayout = etc.setHtmlParsing(null, layout.html, parsingValue, false)
-        $(`${CONST.DESIGN.DIV_NAME}`).append(htmlLayout);
+        let htmlLayout = etc.setHtmlParsing(null, layout.html, parsingValue, false);
+        $(`body`).html(htmlLayout);
         GBL.DESIGN.LAYOUT.EXIST = true;
     }
 

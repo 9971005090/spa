@@ -3,7 +3,7 @@ export const CONST = {
     VERSION: "0.1.0",
     DESIGN: {
         THEME: "default",
-        DIV_NAME: GBL.DESIGN.MAIN_DIV_NAME,
+        // DIV_NAME: GBL.DESIGN.MAIN_DIV_NAME,
         DOM: {
             INPUT: {
                 ID: "#id_input",

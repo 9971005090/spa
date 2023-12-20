@@ -42,12 +42,12 @@ let GBL = {
             URL: null
         },
         THEME: "default",
-        MAIN_DIV_NAME: "#app",
-        HEADER_NAME: "#header",
-        FOOTER_NAME: "#footer",
-        SIDE_MENU_NAME: "#side-menu",
-        PAGE_DIV_NAME: "#main-contents",
-        PAGE_PARENT_DIV_NAME: "#page-wrapper",
+        // MAIN_DIV_NAME: "#app",
+        // HEADER_NAME: "#header",
+        // FOOTER_NAME: "#footer",
+        // SIDE_MENU_NAME: "#side-menu",
+        PAGE_DIV_NAME: "main section",
+        // PAGE_PARENT_DIV_NAME: "#page-wrapper",
         COMMON_DIV_HIDE: [], //".pop.logout" 계정정보 팝업 div(다른 곳을 클릭하면 닫혀야 하는 것들)
         APP_VER_DIV_NAME: "#wrap",
         PAGING_DIV_NAME: "paging",
