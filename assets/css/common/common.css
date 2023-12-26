@@ -21,3 +21,152 @@ body {
     display: inline-block;
 }
  */
+
+
+/**
+ * header 관련 import
+ * /assets/css/common/header.css
+ */
+
+
+main {
+    background: var(--blue-gray);
+}
+
+
+
+/**
+ * main > menu
+ *
+ */
+main menu {
+    position: relative;
+    width: 0px;
+    background: var(--blue-gray);
+    border:0;
+    transition: 0.2s all ease-out;
+}
+main menu.on {
+    width: 240px;
+}
+
+
+
+main menu ul {
+    display: block;
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+    padding: 0;
+    border-radius: 4px;
+    font-size: 11px;
+    color: #000;
+    line-height: 1;
+    box-sizing: border-box;
+    width: 240px;
+}
+
+main menu ul li {
+    width: auto;
+    height: auto;
+    padding: 20px 0 0 20px;
+    border-bottom: 1px solid #f3f3f3;
+}
+main menu ul li .icon{
+    display: block;
+    width: 16px;
+    height: 16px;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: cover;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    -webkit-mask-size: cover;
+    background: #89a;
+    margin-bottom: 4px;
+}
+main menu ul li .link{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    height: 100%;
+    padding: 16px 24px;
+    background: #d8d8d8;
+    border-radius: 24px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+main menu li.selected,
+main menu li.selected:hover{
+    color: var(--blue-200);
+}
+main menu li.selected .icon,
+main menu li.selected:hover .icon {
+    background: var(--white);
+}
+main menu li.selected .link,
+main menu li.selected:hover .link {
+    background: var(--white);
+}
+main menu li:hover .icon{
+    background: var(--white);
+}
+main menu li:hover .link{
+    background: #89A;
+    color: var(--white);
+}
+
+/*main menu:has(.nav-type-long){*/
+/*    width: 200px;*/
+/*    background: var(--white);*/
+/*    border-right-color: #e3e3e3;*/
+/*}*/
+/*main menu .nav-type-long .gnb{*/
+/*    color: #000;*/
+/*    padding: 0;*/
+/*}*/
+/*main menu .nav-type-long .gnb li{*/
+/*    width: auto;*/
+/*    height: auto;*/
+/*    padding: 12px 0;*/
+/*    border-bottom: 1px solid #f3f3f3;*/
+/*}*/
+
+
+
+
+
+/*main menu .nav-type-long li.selected .link,*/
+/*main menu .nav-type-long li.selected:hover .link{*/
+/*    background: unset;*/
+/*    color: var(--primary);*/
+/*}*/
+/*main menu .nav-type-long li:hover .link {*/
+/*    background: unset;*/
+/*    color: var(--primary);*/
+/*}*/
+/*main menu .nav-type-long .gnb .icon{*/
+/*    width: 28px;*/
+/*    background: unset;*/
+/*}*/
+
+
+
+
+
+
+
+main > section{
+    position: relative;
+    min-height: calc(100vh - 80px - 56px - 40px);
+    background: var(--white);
+    margin: 20px;
+    border-radius: 20px;
+}
+main section article {
+    background: var(--white);
+    padding: 24px 30px;
+}

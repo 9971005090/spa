@@ -1,48 +1,48 @@
 @charset "utf-8";
 
 /* mobile burger-btn */
-.burger-btn{
-    display: none;
-    position: relative;
-    width:20px;
-    height:16px;
-    cursor:pointer;
-    text-align:center;
-    z-index: 1;
-}
-.burger-btn .burger-line{
-    width: 20px;
-    height: 2px;
-    background-color: #fff;
-    position: absolute;
-    -webkit-transition:  -webkit-transform .3s;
-    transition: transform .3s;
-}
-.burger-btn .top-line{
-    top: 0;
-    left: 0;
-}
-.burger-btn .mid-line{
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
-}
-.burger-btn .btm-line {
-    bottom: 0;
-    left: 0;
-}
+/*.burger-btn{*/
+/*    display: none;*/
+/*    position: relative;*/
+/*    width:20px;*/
+/*    height:16px;*/
+/*    cursor:pointer;*/
+/*    text-align:center;*/
+/*    z-index: 1;*/
+/*}*/
+/*.burger-btn .burger-line{*/
+/*    width: 20px;*/
+/*    height: 2px;*/
+/*    background-color: #fff;*/
+/*    position: absolute;*/
+/*    -webkit-transition:  -webkit-transform .3s;*/
+/*    transition: transform .3s;*/
+/*}*/
+/*.burger-btn .top-line{*/
+/*    top: 0;*/
+/*    left: 0;*/
+/*}*/
+/*.burger-btn .mid-line{*/
+/*    top: 50%;*/
+/*    left: 0;*/
+/*    transform: translateY(-50%);*/
+/*}*/
+/*.burger-btn .btm-line {*/
+/*    bottom: 0;*/
+/*    left: 0;*/
+/*}*/
 
-.burger-btn.on .top-line{
-    -webkit-transform: translate(0px, 7px) rotate(41deg);
-    transform: translate(0px, 7px) rotate(41deg);
-}
-.burger-btn.on .btm-line {
-    -webkit-transform: translate(0px, -7px) rotate(-41deg);
-    transform: translate(0px, -7px) rotate(-41deg);
-}
-.burger-btn.on .mid-line{
-    height:0;
-}
+/*.burger-btn.on .top-line{*/
+/*    -webkit-transform: translate(0px, 7px) rotate(41deg);*/
+/*    transform: translate(0px, 7px) rotate(41deg);*/
+/*}*/
+/*.burger-btn.on .btm-line {*/
+/*    -webkit-transform: translate(0px, -7px) rotate(-41deg);*/
+/*    transform: translate(0px, -7px) rotate(-41deg);*/
+/*}*/
+/*.burger-btn.on .mid-line{*/
+/*    height:0;*/
+/*}*/
 
 .pc .header-m-nav-link{ display:none; }
 
@@ -56,9 +56,9 @@
         margin-left: 16px;
     }
     #burger-btn{ z-index:2; }
-    header .header-left-content{
-        margin-left: 24px;
-    }
+    /*header .header-left-content{*/
+    /*    margin-left: 24px;*/
+    /*}*/
     header .header-logo{ margin:0; }
     header menu{
         position: absolute;
