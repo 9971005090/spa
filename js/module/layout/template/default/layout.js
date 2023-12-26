@@ -9,7 +9,7 @@ export const html = `
     <!-- wrap-cont -->
     <main>
         <!-- main-left-nav -->
-        <menu>
+        <menu class="on">
             {{{leftMenu}}}
         </menu>
         <!-- //main-left-nav -->

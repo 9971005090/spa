@@ -603,28 +603,28 @@ let custom = {
             return null;
         },
         responsive: function() {
-            if(1024 >= $(window).width() && 768 < $(window).width()){
+            if (1024 >= $(window).width() && 768 < $(window).width()){
                 $(`body`).removeClass("pc mobile mobile-small").addClass("tablet");
             }
-            else if(768 >= $(window).width() && 488 < $(window).width()) {
+            else if (768 >= $(window).width() && 488 < $(window).width()) {
                 $(`body`).removeClass("tablet pc mobile-small").addClass("mobile");
             }
-            else if(488 >= $(window).width()){
+            else if (488 >= $(window).width()){
                 $(`body`).removeClass("tablet pc mobile").addClass("mobile-small");
             }
-            else{
+            else {
                 $(`body`).removeClass("tablet mobile mobile-small").addClass("pc");
             }
-            if($(`body`).hasClass("pc")){
-                if($(`main menu`).hasClass("on")){
+            if ($(`body`).hasClass("pc")) {
+                if ($(`main menu`).hasClass("on") === false) {
                     $(`main menu`).removeClass("on");
-                    $(`.burger-btn`).removeClass("active");
+                    $(`.burger-button`).removeClass("active");
                 }
             }
-            else{
-                if(!$(`main menu`).hasClass("on")){
+            else {
+                if (!$(`main menu`).hasClass("on")) {
                     $(`main menu`).addClass("on");
-                    $(`.burger-btn`).addClass("active");
+                    $(`.burger-button`).addClass("active");
                 }
             }
         },
